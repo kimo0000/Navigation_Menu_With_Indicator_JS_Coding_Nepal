@@ -1,0 +1,94 @@
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: blueviolet;
+}
+.wrapper {
+  width: 350px;
+  background-color: #fff;
+  padding: 0px 25px;
+  border-radius: 12px;
+}
+.icons .indicator {
+  position: absolute;
+  top: -10px;
+  left: 25px;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  background-color: #fff;
+  border: 5px solid blueviolet;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+.indicator::before,
+.indicator::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 25px;
+  /* background-color: red; */
+  bottom: -15px;
+}
+.indicator::after {
+  background-color: #fff;
+  left: -16.5px;
+  border-top-right-radius: 25px;
+  box-shadow: 1px -13px blueviolet;
+}
+.indicator::before {
+  background-color: #fff;
+
+  right: -16.5px;
+  border-top-left-radius: 25px;
+  box-shadow: -0.3px -13px blueviolet;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  /* background-color: red; */
+  height: 100px;
+  position: relative;
+}
+.icons .icon {
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: #777;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.icon.active {
+  color: blueviolet;
+}
+.icon i {
+  font-size: 22px;
+}
+.icon span {
+  font-size: 14px;
+  opacity: 0;
+  height: 0;
+  transition: 0.3s;
+}
+.icon.active span {
+  opacity: 1;
+  height: auto;
+}
